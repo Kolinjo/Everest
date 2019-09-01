@@ -34,6 +34,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -210,9 +212,20 @@ public class HomeWindowController implements Initializable {
 
             // Closes the application if the last tab is closed
             if (tabPane.getTabs().size() == 0) {
-                saveState();
-                Stage thisStage = (Stage) homeWindowSP.getScene().getWindow();
-                thisStage.close();
+            	Alert alert = new Alert (Alert.AlertType.WARNING);
+            	alert.setTitle("Warning");
+            	alert.setHeaderText("You are about to close the application!!");
+            	alert.setContentText("Do you want to proceed with this operation ??");
+            	alert.showAndWait();
+            	
+            	if (alert.getResult() == ButtonType.OK) {
+            		saveState();
+                    Stage thisStage = (Stage) homeWindowSP.getScene().getWindow();
+                    thisStage.close();
+            	}else {
+            		return;
+            	}
+                
             }
         });
     }
