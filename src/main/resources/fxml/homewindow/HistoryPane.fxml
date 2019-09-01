@@ -140,4 +140,24 @@
 			</children>
 		</StackPane>
 	</children>
+<children>
+		<JFXButton fx:id="clearButton" defaultButton="true"
+			minWidth="100.0" onAction="#clearHistory" prefHeight="30.0"
+			ripplerFill="RED" text="CLEAR HISTORY" textAlignment="CENTER"
+			textFill="RED">
+		
+			<padding>
+				<Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+			</padding>
+
+			<font>
+			
+				<Font size="12.5" />
+
+			</font>
+
+		</JFXButton>
+
+	</children>
+
 </VBox>
