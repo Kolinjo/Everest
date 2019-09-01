@@ -15,20 +15,20 @@
  */
 
 #dashboard {
-	-fx-background-color: #505050;
+	-fx-background-color: #7CAFC2;
 }
 
 #addressSection {
-    -fx-background-color: #6e6e6e;
+    -fx-background-color: #7ca3c2;
 }
 
 #addressField {
-    -fx-background-color: #707070;
-	-fx-text-fill: white;
+    -fx-background-color: #4d7ea5;
+	-fx-text-fill: black;
 }
 
 .combo-box {
-    -fx-background-color: #282828;
+    -fx-background-color: #4d52a5;
     -fx-background-radius: 0px;
 }
 
@@ -65,11 +65,11 @@
 
 #sendButton,
 #sendButtonPane {
-    -fx-background-color: #282828;
+    -fx-background-color: #a5a04d;
 }
 
 #responseDetails {
-    -fx-background-color: #1b1b1b;
+    -fx-background-color: #7ca3c2;
 }
 
 #copyBodyButton {
@@ -81,7 +81,7 @@
 }
 
 #loadingLayer {
-    -fx-background-color: #bf8829;
+    -fx-background-color: #a5a04d;
 }
 
 #promptLayer {
@@ -269,7 +269,7 @@
 #historyScrollPane .viewport,
 #historyScrollPane .scroll-bar:vertical,
 #historyScrollPane .scroll-bar:horizontal {
-    -fx-background-color: #404040;
+    -fx-background-color: #353871;
 }
 
 #historyPane, #historyTab {
