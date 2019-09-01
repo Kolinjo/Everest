@@ -53,6 +53,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import org.fxmisc.flowless.VirtualizedScrollPane;
 
 import javax.ws.rs.ProcessingException;
@@ -395,6 +396,19 @@ public class DashboardController implements Initializable {
     private void showResponse(EverestResponse response) {
         if (response == null)
             return;
+        
+        if (response.getStatusCode() == 200 || response.getStatusCode() == 202) {
+        	statusCode.setTextFill(Color.GREEN);
+        	statusCodeDescription.setTextFill(Color.GREENYELLOW);
+        }
+        
+        if (response.getStatusCode() == 404) {
+
+			statusCode.setTextFill(Color.LAWNGREEN);
+
+			statusCodeDescription.setTextFill(Color.LIMEGREEN);
+
+		}
 
         prettifyResponseBody(response);
         statusCode.setText(Integer.toString(response.getStatusCode()));
@@ -509,6 +523,13 @@ public class DashboardController implements Initializable {
         responseArea.clear();
         showLayer(ResponseLayer.PROMPT);
         addressField.requestFocus();
+    }
+    
+	 @FXML
+    private void copyResponseArea () {
+    	responseArea.selectAll();
+    	responseArea.copy();
+    	
     }
 
     @FXML
